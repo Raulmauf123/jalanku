@@ -1,0 +1,24 @@
+#hero .ov{background:linear-gradient(90deg,rgba(20,12,6,.62) 0%,rgba(20,12,6,.32) 45%,rgba(20,12,6,0) 75%),linear-gradient(180deg,rgba(20,12,6,.55) 0%,rgba(20,12,6,.15) 38%,rgba(20,12,6,.75) 100%)}
+#hero h1{word-spacing:.12em}
+#hero .ey{font-size:13px;font-weight:500;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+#hero .p{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.cx{margin-top:22px;max-width:440px}
+.hc>.cx{animation-delay:.6s}
+.s3{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 14px;padding:0;list-style:none;counter-reset:s;font-size:13px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.s3 li{counter-increment:s;display:flex;align-items:center;gap:7px}
+.s3 li::before{content:counter(s);width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--or);font-size:11px;font-weight:700}
+.cs label{display:block;font-size:12.5px;font-weight:600;color:#fff;margin-bottom:6px;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.csr{display:flex;gap:8px}
+.csr input{flex:1;min-width:0;font:inherit;font-size:14px;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:12px 18px;backdrop-filter:blur(8px)}
+.csr input::placeholder{color:rgba(255,255,255,.72)}
+.csr input:focus-visible,.csr button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.csr button{font:inherit;font-weight:600;font-size:14px;border:0;border-radius:99px;padding:12px 20px;background:#fff;color:#1c1917;cursor:pointer}
+#cso{min-height:1.4em;margin:8px 2px 0;font-size:13px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+/* tata letak hero: isi dijaga agar tidak tertutup navbar */
+.hc{top:calc(92px + env(safe-area-inset-top,0px));bottom:calc(104px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+#hero h1{font-size:clamp(32px,min(7vw,8.2vh),88px);margin-bottom:clamp(8px,2vh,16px)}
+.hc .ey{margin-bottom:clamp(6px,1.6vh,14px)}
+.hc .p{margin-bottom:clamp(12px,2.4vh,22px)}
+.hc .cx{margin-top:clamp(12px,2.4vh,22px);width:100%}
+.hc .s3{margin-bottom:clamp(8px,1.6vh,14px)}
+@media(max-width:800px){.hc{top:calc(88px + env(safe-area-inset-top,0px));bottom:calc(92px + env(safe-area-inset-bottom,0px));justify-content:flex-end;align-items:stretch}.hc .hb{flex-wrap:nowrap}.hc .hb button{flex:1;padding:13px 10px;white-space:nowrap}#hero h1{font-size:clamp(28px,min(10.5vw,6.4vh),42px)}}

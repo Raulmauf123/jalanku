@@ -1,0 +1,97 @@
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+#fx{--sp:1;--fxo:var(--or,#f26a1b);--fxok:#22c55e;position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));background:radial-gradient(ellipse at 50% 38%,rgba(242,106,27,.16),transparent 60%),rgba(8,6,5,.94);backdrop-filter:blur(8px);visibility:hidden;opacity:0;transition:opacity .3s,visibility 0s .3s;color:#fff;font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+#fx.on{visibility:visible;opacity:1;transition:opacity .3s}
+#fx *{box-sizing:border-box;margin:0;padding:0;font-family:inherit}
+#fx .fxc{position:relative;width:min(360px,100%);padding:26px 22px 22px;border-radius:28px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.015) 60%),rgba(18,14,11,.84);border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 80px rgba(0,0,0,.55);overflow:hidden}
+#fx .fxc::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 52%,rgba(34,197,94,.24),transparent 66%);opacity:0;transition:opacity .9s;pointer-events:none}
+#fx.ok .fxc::before{opacity:1}
+#fx .fxc>*{position:relative}
+#fx .ic{width:46px;height:46px;margin:0 auto 14px;border-radius:13px;border:1px solid rgba(242,106,27,.45);background:rgba(242,106,27,.1);display:grid;place-items:center;transition:border-color .5s,background .5s}
+#fx .ic svg{grid-area:1/1;width:22px;height:22px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:opacity .4s,transform .4s}
+#fx .ic .k{stroke:var(--fxo)}
+#fx .ic .s{stroke:var(--fxok);opacity:0;transform:scale(.6)}
+#fx.ok .ic{border-color:rgba(34,197,94,.5);background:rgba(34,197,94,.1)}
+#fx.ok .ic .k{opacity:0;transform:scale(.6)}
+#fx.ok .ic .s{opacity:1;transform:none}
+#fx .tt,#fx .ss{display:grid}
+#fx .tt>*,#fx .ss>*{grid-area:1/1;transition:opacity .45s,transform .45s}
+#fx h3{font-size:22px;font-weight:800;letter-spacing:-.02em}
+#fx h3 .g0{color:var(--fxo)}
+#fx h3 .g1{color:var(--fxok)}
+#fx p{margin-top:8px;font-size:13.5px;line-height:1.5;color:#a79d93}
+#fx .t1,#fx .s1{opacity:0;transform:translateY(8px)}
+#fx.ok .t0,#fx.ok .s0{opacity:0;transform:translateY(-8px)}
+#fx.ok .t1,#fx.ok .s1{opacity:1;transform:none}
+#fx .fxs{position:relative;width:200px;height:150px;margin:10px auto 6px}
+#fx .orb,#fx .ring,#fx .core{position:absolute;left:50%;top:50%}
+#fx .orb{width:0;height:0}
+#fx .bx{position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(242,106,27,.28);background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02)),#14100d;box-shadow:0 0 14px rgba(242,106,27,.25);display:grid;place-items:center;opacity:0}
+#fx .bx::before{content:"";position:absolute;inset:-1.5px;border-radius:12px;padding:1.5px;background:conic-gradient(from var(--ang),transparent 0 60%,#ff4d1f 82%,#ffb27a 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:0}
+#fx.on.run .bx::before{animation:fxAng 1.3s linear infinite,fxEdge calc(3.9s*var(--sp)) linear both}
+@keyframes fxAng{to{--ang:360deg}}
+#fx .bx span{font-size:21px;font-weight:800;color:#fff;display:grid;place-items:center}
+#fx .bx span b{display:block;font-weight:800;opacity:0}
+#fx .bx .cu{position:absolute;left:50%;top:50%;width:2px;height:20px;margin:-10px 0 0 -1px;border-radius:2px;background:#ffb27a;box-shadow:0 0 6px #ff9a52;opacity:0}
+#fx .ring{width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:2px solid var(--fxok);box-shadow:0 0 26px rgba(34,197,94,.35),inset 0 0 22px rgba(34,197,94,.18);opacity:0}
+#fx .core{width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:13px;border:2px solid var(--fxo);background:rgba(255,255,255,.04);display:grid;place-items:center;opacity:0}
+#fx .core svg{width:26px;height:26px;fill:none;stroke:var(--fxok);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#fx .core path{stroke-dasharray:1;stroke-dashoffset:1}
+#fx .dots u{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:var(--fxok);opacity:0}
+#fx.run .orb{animation:fxOrb calc(3.9s*var(--sp)) linear both}
+#fx.run .bx{animation:fxBx calc(3.9s*var(--sp)) linear calc(var(--n)*.04s*var(--sp)) both,fxAct calc(.23s*var(--sp)) linear calc((var(--n)*.23s - .11s)*var(--sp))}
+#fx.run .bx span{animation:fxDg calc(3.9s*var(--sp)) linear calc(var(--n)*.04s*var(--sp)) both}
+#fx.run .bx span b{animation:fxTyp calc(.25s*var(--sp)) cubic-bezier(.2,.9,.3,1.4) calc((.12s + var(--n)*.23s)*var(--sp)) both}
+#fx.run .bx .cu{animation:fxCur calc(.23s*var(--sp)) steps(1,end) calc((var(--n)*.23s - .11s)*var(--sp))}
+#fx.run .core{animation:fxCore calc(.9s*var(--sp)) ease both;animation-delay:calc(3.7s*var(--sp))}
+#fx.run .ring{animation:fxRing calc(1s*var(--sp)) cubic-bezier(.2,.8,.3,1) both;animation-delay:calc(3.85s*var(--sp))}
+#fx.run .dots u{animation:fxDot calc(.8s*var(--sp)) ease-out both;animation-delay:calc(3.9s*var(--sp))}
+#fx.run .core path{animation:fxChk calc(.4s*var(--sp)) ease-out both;animation-delay:calc(4.15s*var(--sp))}
+@keyframes fxOrb{0%,45%{transform:rotate(0);animation-timing-function:cubic-bezier(.6,0,.35,1)}86%,100%{transform:rotate(360deg)}}
+@keyframes fxBx{
+0%{opacity:0;transform:translate(var(--rx),0) scale(.9)}
+4%{opacity:1;transform:translate(var(--rx),0) scale(1)}
+28%{opacity:1;transform:translate(var(--rx),0) scale(1);animation-timing-function:cubic-bezier(.6,0,.3,1)}
+36%{opacity:1;transform:translate(0,0) scale(.9);animation-timing-function:cubic-bezier(.2,.9,.3,1.25)}
+45%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1)}
+86%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1);animation-timing-function:cubic-bezier(.6,0,.3,1)}
+96%{opacity:1;transform:translate(0,0) scale(.88)}
+100%{opacity:0;transform:translate(0,0) scale(.7)}}
+@keyframes fxDg{0%,88%{opacity:1}95%,100%{opacity:0}}
+@keyframes fxTyp{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+@keyframes fxCur{0%,100%{opacity:1}}
+@keyframes fxAct{0%,100%{border-color:#ff9a52;box-shadow:0 0 18px rgba(242,106,27,.65)}}
+@keyframes fxEdge{0%,30%{opacity:0}34%,94%{opacity:1}100%{opacity:0}}
+@keyframes fxCore{0%{opacity:0;transform:scale(.8);border-color:var(--fxo);box-shadow:0 0 16px rgba(242,106,27,.5)}20%{opacity:1;transform:scale(1);border-color:var(--fxo)}50%{border-color:var(--fxo);box-shadow:0 0 16px rgba(242,106,27,.5)}75%{border-color:var(--fxok);box-shadow:0 0 18px rgba(34,197,94,.45)}100%{opacity:1;transform:scale(1);border-color:var(--fxok);box-shadow:0 0 22px rgba(34,197,94,.4)}}
+@keyframes fxRing{0%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1)}100%{opacity:.3;transform:scale(1.2)}}
+@keyframes fxDot{0%{opacity:0;transform:rotate(var(--a)) translateY(-30px)}30%{opacity:1}100%{opacity:0;transform:rotate(var(--a)) translateY(-68px)}}
+@keyframes fxChk{to{stroke-dashoffset:0}}
+#fx .fxk{display:none;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;padding:10px 12px 10px 16px;border-radius:16px;border:1px dashed rgba(255,255,255,.25);background:rgba(255,255,255,.05);text-align:left;opacity:0;transform:translateY(8px);transition:opacity .5s .35s,transform .5s .35s}
+#fx.tk .fxk{display:flex}
+#fx.ok .fxk{opacity:1;transform:none}
+#fx .fxk small{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#a79d93}
+#fx .fxk b{display:block;margin-top:3px;font-size:24px;font-weight:800;letter-spacing:.06em}
+#fx .fxq{height:36px;padding:0 14px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:none;color:#fff;font-size:13px;font-weight:700;pointer-events:none;transition:background .25s}
+#fx.rdy .fxq{pointer-events:auto;cursor:pointer}
+#fx .fxq:hover{background:rgba(255,255,255,.08)}
+#fx .fxp{display:grid;place-items:center;width:100%;height:50px;border:0;border-radius:15px;font-size:15px;font-weight:800;color:#120e0b;background:linear-gradient(180deg,#ffb27a,var(--fxo));box-shadow:0 8px 24px rgba(242,106,27,.3);pointer-events:none;transition:background .5s,color .5s,box-shadow .5s,transform .2s}
+#fx .fxp>*{grid-area:1/1;transition:opacity .4s}
+#fx .bw{display:flex;align-items:center;gap:8px}
+#fx .bd{opacity:0}
+#fx.ok .bw{opacity:0}
+#fx.ok .bd{opacity:1}
+#fx.ok .fxp{background:linear-gradient(180deg,#34d97b,#16a34a);color:#04170c;box-shadow:0 8px 24px rgba(34,197,94,.35)}
+#fx.rdy.tk .fxp{pointer-events:auto;cursor:pointer}
+#fx .fxp:active{transform:scale(.98)}
+#fx .fxp:focus-visible,#fx .fxq:focus-visible{outline:2px solid #fff;outline-offset:3px}
+#fx .sp{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:fxSpn .8s linear infinite}
+@keyframes fxSpn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#fx.run *{animation-duration:.01s!important;animation-delay:0s!important}#fx .sp,#fx.on.run .bx::before{animation:none!important}}
+#auth .pinw{display:none}
+#auth .pinw.on{display:block}
+#auth .pinw label{display:block;font-size:12.5px;color:var(--mute);margin:0 0 8px}
+#auth .pin{display:flex;gap:10px}
+#auth .pin input{flex:1;min-width:0;width:100%;height:58px;text-align:center;font-size:22px;font-weight:800;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;outline:0;transition:.25s}
+#auth .pin input.f{border-color:rgba(242,106,27,.55)}
+#auth .pin input:focus{border-color:var(--acc);background:rgba(242,106,27,.08);box-shadow:0 0 0 3px rgba(242,106,27,.2)}
+#auth .pin.bad input{border-color:#ff5a4f;background:rgba(255,90,79,.1);animation:pinShake .4s}
+@keyframes pinShake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}

@@ -1,0 +1,14 @@
+#txt.out>*{animation:dn .22s cubic-bezier(.4,0,1,1) both}
+#txt.out>*:nth-child(2){animation-delay:.02s}#txt.out>*:nth-child(3){animation-delay:.04s}#txt.out>*:nth-child(n+4){animation-delay:.06s}
+@keyframes dn{to{opacity:0;transform:translateY(-10px)}}
+#sv .nb,#sv .hd,#sv .pl,#sv .pf{transform-box:fill-box;animation-play-state:paused}
+#sv.live .nb,#sv.live .hd,#sv.live .pl,#sv.live .pf{animation-play-state:running}
+#sv .nb{transform-origin:50% 100%;animation:nBr var(--t,3.2s) ease-in-out var(--d,0s) infinite}
+#sv .hd{transform-origin:50% 100%;animation:nNod 4.6s ease-in-out var(--d,0s) infinite}
+#sv .pl{transform-origin:50% 100%;animation:pSw 3.4s ease-in-out var(--d,0s) infinite}
+#sv .pf{animation:pFl 3.6s ease-in-out var(--d,0s) infinite}
+@keyframes nBr{50%{transform:scaleY(1.03)}}
+@keyframes nNod{0%,62%,100%{transform:translateY(0) rotate(0)}69%{transform:translateY(.9px) rotate(6deg)}76%{transform:translateY(0) rotate(0)}83%{transform:translateY(.9px) rotate(6deg)}90%{transform:translateY(0) rotate(0)}}
+@keyframes pSw{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.4deg)}}
+@keyframes pFl{50%{transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){#txt.out>*{animation:none}#sv .nb,#sv .hd,#sv .pl,#sv .pf{animation:none}}
